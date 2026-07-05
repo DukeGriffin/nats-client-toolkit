@@ -15,3 +15,7 @@
 *.aliases
 *.lvlps
 .cache/
+
+# Test artifcats
+*.html
+*.xml

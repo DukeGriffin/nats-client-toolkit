@@ -62,13 +62,15 @@ New-Item -ItemType Directory -Path $InstallDir -Force | Out-Null
 Copy-Item -Path (Join-Path $extractedFolder.FullName "*") -Destination $InstallDir -Recurse -Force
 Remove-Item -Recurse -Force $extractDir
 
-# Update User PATH: strip any previous nats entries, then add the (fixed) install dir
+# Update User PATH: drop only an exact prior entry for this InstallDir, then add it back.
+# Exact-match (not a wildcard) so unrelated entries are never touched, even if PATH is malformed.
 $userPath = [Environment]::GetEnvironmentVariable("PATH", [EnvironmentVariableTarget]::User)
+$normalizedInstallDir = $InstallDir.TrimEnd('\')
 $pathEntries = @()
 if ($userPath) {
-    $pathEntries = ($userPath -split ";") | Where-Object { $_ -and ($_ -notlike "*\nats*") }
+    $pathEntries = @($userPath -split ";" | Where-Object { $_ -and ($_.TrimEnd('\') -ne $normalizedInstallDir) })
 }
-$pathEntries += $InstallDir
+$pathEntries += $normalizedInstallDir
 [Environment]::SetEnvironmentVariable("PATH", ($pathEntries -join ";"), [EnvironmentVariableTarget]::User)
 
 Write-Host "NATS server $version ($Arch) installed to $InstallDir"

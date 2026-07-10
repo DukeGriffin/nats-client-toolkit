@@ -25,13 +25,11 @@
 			<Item Name="caraya test runner.vi" Type="VI" URL="../../test/caraya test runner.vi"/>
 			<Item Name="nats.lv.xml" Type="Document" URL="../../test/nats.lv.xml"/>
 		</Item>
-		<Item Name="install_nats.ps1" Type="Document" URL="../../install_nats.ps1"/>
 		<Item Name="LICENSE" Type="Document" URL="../../LICENSE"/>
 		<Item Name="nat.lv.viancfg" Type="Document" URL="../../nat.lv.viancfg"/>
 		<Item Name="NATS Client.lvlib" Type="Library" URL="../NATS Client/NATS Client.lvlib"/>
 		<Item Name="NATS Subscription.lvlib" Type="Library" URL="../NATS Subscription/NATS Subscription.lvlib"/>
 		<Item Name="README.md" Type="Document" URL="../../README.md"/>
-		<Item Name="remove_nats.ps1" Type="Document" URL="../../remove_nats.ps1"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Array Size(s)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Array Size(s)__ogtk.vi"/>

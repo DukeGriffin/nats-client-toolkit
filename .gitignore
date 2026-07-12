@@ -15,6 +15,7 @@
 *.aliases
 *.lvlps
 .cache/
+*debug.lvprojstate
 
 # Test artifcats
 *.html

@@ -14,7 +14,7 @@ To learn more about NATS see:
 
 ### Installation
 
-Install source code from VI Package Manager. See [NATS.io](https://github.com/nats-io/nats-server/releases/latest) for server installs. 
+Install source code from VI Package Manager. See [NATS.io](https://github.com/nats-io/nats-server/releases/latest) for server installs.
 
 #### Windows
 
@@ -33,6 +33,12 @@ On Windows, use the scripts in [examples/](examples/) instead of installing manu
 
 Both accept an `-InstallDir` param (defaults to `C:\nats`) if you need a custom location.
 
+#### Mac
+
+```sh
+brew install nats-server
+```
+
 #### Linux
 
 NATS provides a docker image providing an easy way to get NATS onto NI Linux Real-Time targets.
@@ -48,7 +54,8 @@ TODO
 
 ### Development Setup
 
-1. Install nats-toolkit.vipc
+1. Install NATS Client Toolkit.vipc
+2. Install dev.vipc
 
 ### Linting and Testing
 

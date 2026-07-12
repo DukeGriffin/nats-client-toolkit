@@ -14,7 +14,10 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="examples" Type="Folder">
 			<Item Name="install_nats_windows.ps1" Type="Document" URL="../../examples/install_nats_windows.ps1"/>
+			<Item Name="Publisher.vi" Type="VI" URL="../../examples/Publisher.vi"/>
 			<Item Name="remove_nats_windows.ps1" Type="Document" URL="../../examples/remove_nats_windows.ps1"/>
+			<Item Name="Requester.vi" Type="VI" URL="../../examples/Requester.vi"/>
+			<Item Name="Responder.vi" Type="VI" URL="../../examples/Responder.vi"/>
 			<Item Name="Subscriber.vi" Type="VI" URL="../../examples/Subscriber.vi"/>
 		</Item>
 		<Item Name="test" Type="Folder">

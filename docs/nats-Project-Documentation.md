@@ -12,7 +12,7 @@ Empty
 
 # Location
 
-C:\NATS Project\nats.lvproj
+..\nats.lvproj
 
 
 
@@ -20,9 +20,9 @@ C:\NATS Project\nats.lvproj
 
 |Name|Description|
 |-|-|
-|[NATS Client](NATS-Client-Library-Documentation)||
-|[NATS Core](NATS-Core-Library-Documentation)||
-|[NATS Subscription](NATS-Subscription-Library-Documentation)||
+|[NATS Client](NATS-Client-Library-Documentation.md)||
+|[NATS Core](NATS-Core-Library-Documentation.md)||
+|[NATS Subscription](NATS-Subscription-Library-Documentation.md)||
 
 
 

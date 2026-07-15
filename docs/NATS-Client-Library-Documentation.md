@@ -12,7 +12,7 @@ Empty
 
 # Location
 
-C:\NATS Project\NATS Client\NATS Client.lvlib
+..\NATS Client\NATS Client.lvlib
 
 
 

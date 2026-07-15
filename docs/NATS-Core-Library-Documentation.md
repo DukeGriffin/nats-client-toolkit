@@ -12,7 +12,7 @@ Empty
 
 # Location
 
-C:\NATS Project\NATS Core.lvlib
+..\NATS Core.lvlib
 
 <@>Libraries<@>
 

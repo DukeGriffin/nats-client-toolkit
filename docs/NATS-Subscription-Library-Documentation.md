@@ -12,7 +12,7 @@ Empty
 
 # Location
 
-C:\NATS Project\NATS Subscription\NATS Subscription.lvlib
+..\NATS Subscription\NATS Subscription.lvlib
 
 <@>Libraries<@>
 

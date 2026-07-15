@@ -41,34 +41,34 @@ See the [Class Report Design](https://bitbucket.org/ChrisCilino/labview-auto-doc
 
 |Member Name|Scope|Dynamic Dispatch|Must Override|Must Use Parent Implementation|Description \ Prototype|
 |-|-|-|-|-|-|
-|receive|public|TRUE|FALSE|FALSE|<img src="/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/receivec.png" alt="receivec.png" width="340" hieght="47" />|
+|receive|public|TRUE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/receivec.png" alt="receivec.png" width="340" hieght="47" />|
 || | | | ||
 || | | | ||
-|start|public|FALSE|FALSE|FALSE|<img src="/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/startc.png" alt="startc.png" width="290" hieght="47" />|
+|start|public|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/startc.png" alt="startc.png" width="290" hieght="47" />|
 || | | | ||
 || | | | ||
-|stop|public|FALSE|FALSE|FALSE|<img src="/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/stopc.png" alt="stopc.png" width="274" hieght="47" />|
+|stop|public|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/stopc.png" alt="stopc.png" width="274" hieght="47" />|
 || | | | ||
 || | | | ||
-|wait on subscription|public|TRUE|FALSE|FALSE|<img src="/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/wait%20on%20subscriptionc.png" alt="wait on subscriptionc.png" width="302" hieght="47" />|
+|wait on subscription|public|TRUE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/wait%20on%20subscriptionc.png" alt="wait on subscriptionc.png" width="302" hieght="47" />|
 || | | | ||
 || | | | ||
-|get id|public|FALSE|FALSE|FALSE|<img src="/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/get%20idc.png" alt="get idc.png" width="361" hieght="47" />|
+|get id|public|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/get%20idc.png" alt="get idc.png" width="361" hieght="47" />|
 || | | | ||
 || | | | ||
-|set id|protected|FALSE|FALSE|FALSE|<img src="/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/set%20idc.png" alt="set idc.png" width="361" hieght="47" />|
+|set id|protected|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/set%20idc.png" alt="set idc.png" width="361" hieght="47" />|
 || | | | ||
 || | | | ||
-|get reply queue|public|FALSE|FALSE|FALSE|<img src="/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/get%20reply%20queuec.png" alt="get reply queuec.png" width="361" hieght="47" />|
+|get reply queue|public|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/get%20reply%20queuec.png" alt="get reply queuec.png" width="361" hieght="47" />|
 || | | | ||
 || | | | ||
-|set reply queue|public|FALSE|FALSE|FALSE|<img src="/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/set%20reply%20queuec.png" alt="set reply queuec.png" width="361" hieght="47" />|
+|set reply queue|public|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/set%20reply%20queuec.png" alt="set reply queuec.png" width="361" hieght="47" />|
 || | | | ||
 || | | | ||
-|get subject|public|FALSE|FALSE|FALSE|<img src="/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/get%20subjectc.png" alt="get subjectc.png" width="361" hieght="47" />|
+|get subject|public|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/get%20subjectc.png" alt="get subjectc.png" width="361" hieght="47" />|
 || | | | ||
 || | | | ||
-|set subject|protected|FALSE|FALSE|FALSE|<img src="/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/set%20subjectc.png" alt="set subjectc.png" width="361" hieght="47" />|
+|set subject|protected|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/set%20subjectc.png" alt="set subjectc.png" width="361" hieght="47" />|
 || | | | ||
 || | | | ||
 

@@ -8,8 +8,9 @@
 *.so.*
 *.dylib
 
-# Executables
+# Builds
 *.exe
+*.vip
 
 # Metadata
 *.aliases

@@ -9,6 +9,18 @@
 		<Path>"."</Path>
 		<Removed>FALSE</Removed>
 	</Item>
+	<Item>
+		<Path>".git"</Path>
+		<Removed>TRUE</Removed>
+	</Item>
+	<Item>
+		<Path>"bld"</Path>
+		<Removed>TRUE</Removed>
+	</Item>
+	<Item>
+		<Path>"test"</Path>
+		<Removed>TRUE</Removed>
+	</Item>
 </ItemsToAnalyze>
 <TestConfigData>
 	<Test>
@@ -57,7 +69,7 @@
 		<MaxFailures>5</MaxFailures>
 		<BasePath>"LabVIEW"</BasePath>
 		<RelativePath>"project\\_VI Analyzer\\_tests\\Block Diagram\\Performance\\Inlinable VIs.llb"</RelativePath>
-		<Selected>TRUE</Selected>
+		<Selected>FALSE</Selected>
 		<Controls>
 		</Controls>
 	</Test>

@@ -13,7 +13,9 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="examples" Type="Folder">
+			<Item Name="Pub-Sub Example.vi" Type="VI" URL="../examples/Pub-Sub Example.vi"/>
 			<Item Name="Publisher.vi" Type="VI" URL="../examples/Publisher.vi"/>
+			<Item Name="Request-Response Example.vi" Type="VI" URL="../examples/Request-Response Example.vi"/>
 			<Item Name="Requester.vi" Type="VI" URL="../examples/Requester.vi"/>
 			<Item Name="Responder.vi" Type="VI" URL="../examples/Responder.vi"/>
 			<Item Name="Subscriber.vi" Type="VI" URL="../examples/Subscriber.vi"/>

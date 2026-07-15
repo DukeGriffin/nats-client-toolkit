@@ -12,25 +12,23 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="examples" Type="Folder" URL="../examples">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
+		<Item Name="examples" Type="Folder">
+			<Item Name="Publisher.vi" Type="VI" URL="../examples/Publisher.vi"/>
+			<Item Name="Requester.vi" Type="VI" URL="../examples/Requester.vi"/>
+			<Item Name="Responder.vi" Type="VI" URL="../examples/Responder.vi"/>
+			<Item Name="Subscriber.vi" Type="VI" URL="../examples/Subscriber.vi"/>
 		</Item>
 		<Item Name="test" Type="Folder">
-			<Item Name="fixturing" Type="Folder">
-				<Item Name="server health check.vi" Type="VI" URL="../../test/fixturing/server health check.vi"/>
-				<Item Name="server start.vi" Type="VI" URL="../../test/fixturing/server start.vi"/>
-				<Item Name="server stop.vi" Type="VI" URL="../../test/fixturing/server stop.vi"/>
-			</Item>
 			<Item Name="tests" Type="Folder">
 				<Item Name="Client Subscription Integration Test.vi" Type="VI" URL="../../test/tests/Client Subscription Integration Test.vi"/>
 				<Item Name="request response test.vi" Type="VI" URL="../../test/tests/request response test.vi"/>
 			</Item>
 			<Item Name="caraya test runner.vi" Type="VI" URL="../../test/caraya test runner.vi"/>
-			<Item Name="nats.lv.xml" Type="Document" URL="../../test/nats.lv.xml"/>
 		</Item>
 		<Item Name="LICENSE" Type="Document" URL="../../LICENSE"/>
 		<Item Name="nat.lv.viancfg" Type="Document" URL="../../nat.lv.viancfg"/>
 		<Item Name="NATS Client.lvlib" Type="Library" URL="../NATS Client/NATS Client.lvlib"/>
+		<Item Name="NATS Infrastructure.lvlib" Type="Library" URL="../NATS Infrastructure/NATS Infrastructure.lvlib"/>
 		<Item Name="NATS Subscription.lvlib" Type="Library" URL="../NATS Subscription/NATS Subscription.lvlib"/>
 		<Item Name="README.md" Type="Document" URL="../../README.md"/>
 		<Item Name="Dependencies" Type="Dependencies">

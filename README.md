@@ -3,7 +3,7 @@
 This toolkit extends [nats.lv](https://github.com/drew-herron/nats.lv) providing:
 
 - A client daemon with queue based subscriptions for easy integration into common LabVIEW project frameworks
-- JetStream publish support for lossless publishing.
+- JetStream publish support for lossless publishing (coming soon)!
 
 To learn more about NATS see:
 
@@ -18,14 +18,21 @@ Install source code from VI Package Manager. See [NATS.io](https://github.com/na
 
 #### Windows
 
-On Windows, use the scripts in [examples/](examples/) instead of installing manually:
+On Windows, use the scripts in `src\NATS Fixturing\` instead of installing manually. These scripts are wrapped with VIs for ease of use.
+
+##### VI
+
+- Run `NATS Infrastructure.lvlib:NATS Server Install.vi` to install (requires internet)
+- Run `NATS Infrastructure.lvlib:NATS Server Remvoe.vi` to remove
+
+##### Command Line
 
 ```powershell
 # Installs the latest nats-server release; prompts for amd64/arm64/386
 .\examples\install_nats_windows.ps1
 
 # Install to a custom directory instead of the C:\nats default
-.\examples\install_nats_windows.ps1 -Arch amd64 -InstallDir "D:\tools\nats"
+.\examples\install_nats_windows.ps1 -Arch amd64 -InstallDir "C:\somewhere-else"
 
 # Stops any running nats-server process and removes the install + PATH entry
 .\examples\remove_nats_windows.ps1
@@ -48,7 +55,9 @@ NATS provides a docker image providing an easy way to get NATS onto NI Linux Rea
 
 ### Examples
 
-TODO
+After VI package installation navigate to NI Example Finder.
+
+![alt text](docs\examples.png)
 
 ## Contributing
 

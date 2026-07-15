@@ -8,10 +8,16 @@
 *.so.*
 *.dylib
 
-# Executables
+# Builds
 *.exe
+*.vip
 
 # Metadata
 *.aliases
 *.lvlps
 .cache/
+*debug.lvprojstate
+
+# Test artifcats
+*.html
+*.xml

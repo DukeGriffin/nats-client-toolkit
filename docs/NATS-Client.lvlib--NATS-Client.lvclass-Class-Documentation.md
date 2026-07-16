@@ -45,11 +45,11 @@ See the [Class Report Design](https://bitbucket.org/ChrisCilino/labview-auto-doc
 |Remove Sub|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Remove%20Subc.png" alt="Remove Subc.png" width="313" hieght="47" />|
 |Async|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Asyncc.png" alt="Asyncc.png" width="206" hieght="95" />|
 || | | | |Reads a message from the NATS server.|
-|Get NATS Connection|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Get%20NATS%20Connectionc.png" alt="Get NATS Connectionc.png" width="378" hieght="39" />|
+|Get NATS Connection|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/get%20NATS%20connectionc.png" alt="Get NATS Connectionc.png" width="378" hieght="39" />|
 |Handle Subscription Requests|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Handle%20Subscription%20Requestsc.png" alt="Handle Subscription Requestsc.png" width="281" hieght="79" />|
 |Reconnect|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Reconnectc.png" alt="Reconnectc.png" width="369" hieght="47" />|
 |Resubscribe Following Reconnect|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Resubscribe%20Following%20Reconnectc.png" alt="Resubscribe Following Reconnectc.png" width="272" hieght="47" />|
-|Set NATS Connection|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Set%20NATS%20Connectionc.png" alt="Set NATS Connectionc.png" width="368" hieght="47" />|
+|Set NATS Connection|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Set%20NATS%20Connectionc.png" alt="set NATS connectionc.png" width="368" hieght="47" />|
 |Publish|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Publishc.png" alt="Publishc.png" width="329" hieght="79" />|
 || | | | |Publishes subject through NATS Client.|
 |Query Client Connection Status|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Query%20Client%20Connection%20Statusc.png" alt="Query Client Connection Statusc.png" width="262" hieght="39" />|

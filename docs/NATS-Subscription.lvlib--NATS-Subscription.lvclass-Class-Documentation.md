@@ -1,20 +1,13 @@
 This document was created by the [PetranWay Autodocumentation Utility](https://bitbucket.org/ChrisCilino/labview-auto-documentation/src/master/).
 
 
-
-
-
 # Charter
 
 Empty
 
-
-
 # Location
 
-..\NATS Subscription\NATS Subscription.lvclass
-
-
+C:\Nats LabVIEW\src\NATS Subscription\NATS Subscription.lvclass
 
 # Private Data
 
@@ -33,43 +26,24 @@ See the [Class Report Design](https://bitbucket.org/ChrisCilino/labview-auto-doc
 |reply queue*.nats message{}.headers||String|
 |reply queue*.nats message{}.type||TypeDef "msg type": Enum (U16):   {0 : Undefined   1 : MSG   2 : HMSG   3 : +OK   4 : PING   5 : PONG   6 : -ERR   7 : INFO}|
 |reply queue*.nats message{}.received||AbsTime|
-
-
-
+|queue||String|
 
 # Members
 
 |Member Name|Scope|Dynamic Dispatch|Must Override|Must Use Parent Implementation|Description \ Prototype|
 |-|-|-|-|-|-|
-|receive|public|TRUE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/receivec.png" alt="receivec.png" width="340" hieght="47" />|
-|| | | | ||
-|| | | | ||
-|start|public|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/startc.png" alt="startc.png" width="290" hieght="47" />|
-|| | | | ||
-|| | | | ||
-|stop|public|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/stopc.png" alt="stopc.png" width="274" hieght="47" />|
-|| | | | ||
-|| | | | ||
-|wait on subscription|public|TRUE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/wait%20on%20subscriptionc.png" alt="wait on subscriptionc.png" width="302" hieght="47" />|
-|| | | | ||
-|| | | | ||
-|get id|public|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/get%20idc.png" alt="get idc.png" width="361" hieght="47" />|
-|| | | | ||
-|| | | | ||
-|set id|protected|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/set%20idc.png" alt="set idc.png" width="361" hieght="47" />|
-|| | | | ||
-|| | | | ||
-|get reply queue|public|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/get%20reply%20queuec.png" alt="get reply queuec.png" width="361" hieght="47" />|
-|| | | | ||
-|| | | | ||
-|set reply queue|public|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/set%20reply%20queuec.png" alt="set reply queuec.png" width="361" hieght="47" />|
-|| | | | ||
-|| | | | ||
-|get subject|public|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/get%20subjectc.png" alt="get subjectc.png" width="361" hieght="47" />|
-|| | | | ||
-|| | | | ||
-|set subject|protected|FALSE|FALSE|FALSE|<img src="/docs/Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/set%20subjectc.png" alt="set subjectc.png" width="361" hieght="47" />|
-|| | | | ||
-|| | | | ||
-
-
+|Receive Response|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/Receive%20Responsec.png" alt="Receive Responsec.png" width="340" hieght="47" />|
+|Sub|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/Subc.png" alt="Subc.png" width="292" hieght="63" />|
+|| | | | |Creates and registers a subscription with the NATS Client.|
+|Unsub|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/Unsubc.png" alt="Unsubc.png" width="320" hieght="47" />|
+|| | | | |Unregisters a subscription with the client.|
+|Wait on Response|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/Wait%20on%20Responsec.png" alt="Wait on Responsec.png" width="302" hieght="47" />|
+|| | | | |Returns the next subscription response.|
+|get id|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/get%20idc.png" alt="get idc.png" width="361" hieght="47" />|
+|set id|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/set%20idc.png" alt="set idc.png" width="361" hieght="47" />|
+|Get queue|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/Get%20queuec.png" alt="Get queuec.png" width="361" hieght="47" />|
+|Set queue|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/Set%20queuec.png" alt="Set queuec.png" width="361" hieght="47" />|
+|get reply queue|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/get%20reply%20queuec.png" alt="get reply queuec.png" width="361" hieght="47" />|
+|set reply queue|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/set%20reply%20queuec.png" alt="set reply queuec.png" width="361" hieght="47" />|
+|get subject|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/get%20subjectc.png" alt="get subjectc.png" width="361" hieght="47" />|
+|set subject|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation/set%20subjectc.png" alt="set subjectc.png" width="361" hieght="47" />|

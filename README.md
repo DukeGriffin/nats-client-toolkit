@@ -18,7 +18,7 @@ Install source code from VI Package Manager. See [NATS.io](https://github.com/na
 
 #### Windows
 
-On Windows, use the scripts in `src\NATS Fixturing\` instead of installing manually. These scripts are wrapped with VIs for ease of use.
+On Windows, use the scripts in `src\NATS Insfrastructure\` instead of installing manually. These scripts are wrapped with VIs for ease of use.
 
 ##### VI
 
@@ -57,7 +57,7 @@ NATS provides a docker image providing an easy way to get NATS onto NI Linux Rea
 
 After VI package installation navigate to NI Example Finder.
 
-![alt text](docs\examples.png)
+![alt text](docs/Images/examples.png)
 
 ## Contributing
 

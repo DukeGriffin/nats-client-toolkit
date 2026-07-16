@@ -1,24 +1,25 @@
 This document was created by the [PetranWay Autodocumentation Utility](https://bitbucket.org/ChrisCilino/labview-auto-documentation/src/master/).
 
 
-
-
-
 # Charter
 
 Empty
 
-
-
 # Location
 
-..\NATS Subscription\NATS Subscription.lvlib
+C:\Nats LabVIEW\src\NATS Subscription\NATS Subscription.lvlib
 
-<@>Libraries<@>
+# Libraries
 
-<@>Classes<@>
+|Name|
+|-|
+|No Libraries in this Library|
 
+# Classes
 
+|Name|Description|
+|-|-|
+|[NATS Subscription](NATS-Subscription.lvlib--NATS-Subscription.lvclass-Class-Documentation.md)||
 
 # Members
 
@@ -26,13 +27,9 @@ Empty
 |-|
 |No Members in this Library|
 
-
-
-
 # Controls
 
 |Name|
 |-|
 |No Controls in this Library|
-
 

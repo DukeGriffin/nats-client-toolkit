@@ -7,7 +7,7 @@ Empty
 
 # Location
 
-C:\Nats LabVIEW\src\NATS Client\NATS Client.lvclass
+..\src\NATS Client\NATS Client.lvclass
 
 # Private Data
 
@@ -41,40 +41,40 @@ See the [Class Report Design](https://bitbucket.org/ChrisCilino/labview-auto-doc
 
 |Member Name|Scope|Dynamic Dispatch|Must Override|Must Use Parent Implementation|Description \ Prototype|
 |-|-|-|-|-|-|
-|Register Sub|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Register%20Subc.png" alt="Register Subc.png" width="313" hieght="47" />|
-|Remove Sub|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Remove%20Subc.png" alt="Remove Subc.png" width="313" hieght="47" />|
-|Async|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Asyncc.png" alt="Asyncc.png" width="206" hieght="95" />|
+|Register Sub|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Register%20Subc.png" alt="Register Subc.png" width="313" height="47" />|
+|Remove Sub|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Remove%20Subc.png" alt="Remove Subc.png" width="313" height="47" />|
+|Async|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Asyncc.png" alt="Asyncc.png" width="206" height="95" />|
 || | | | |Reads a message from the NATS server.|
-|Get NATS Connection|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/get%20NATS%20connectionc.png" alt="Get NATS Connectionc.png" width="378" hieght="39" />|
-|Handle Subscription Requests|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Handle%20Subscription%20Requestsc.png" alt="Handle Subscription Requestsc.png" width="281" hieght="79" />|
-|Reconnect|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Reconnectc.png" alt="Reconnectc.png" width="369" hieght="47" />|
-|Resubscribe Following Reconnect|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Resubscribe%20Following%20Reconnectc.png" alt="Resubscribe Following Reconnectc.png" width="272" hieght="47" />|
-|Set NATS Connection|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Set%20NATS%20Connectionc.png" alt="set NATS connectionc.png" width="368" hieght="47" />|
-|Publish|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Publishc.png" alt="Publishc.png" width="329" hieght="79" />|
+|Get NATS Connection|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/get%20nats%20connectionc.png" alt="Get NATS Connectionc.png" width="378" height="39" />|
+|Handle Subscription Requests|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Handle%20Subscription%20Requestsc.png" alt="Handle Subscription Requestsc.png" width="281" height="79" />|
+|Reconnect|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Reconnectc.png" alt="Reconnectc.png" width="369" height="47" />|
+|Resubscribe Following Reconnect|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Resubscribe%20Following%20Reconnectc.png" alt="Resubscribe Following Reconnectc.png" width="272" height="47" />|
+|Set NATS Connection|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/set%20nats%20connectionc.png" alt="Set NATS Connectionc.png" width="368" height="47" />|
+|Publish|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Publishc.png" alt="Publishc.png" width="329" height="79" />|
 || | | | |Publishes subject through NATS Client.|
-|Query Client Connection Status|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Query%20Client%20Connection%20Statusc.png" alt="Query Client Connection Statusc.png" width="262" hieght="39" />|
+|Query Client Connection Status|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Query%20Client%20Connection%20Statusc.png" alt="Query Client Connection Statusc.png" width="262" height="39" />|
 || | | | |Checks if the Client is connected to the NATS server.|
-|Query Client Errors|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Query%20Client%20Errorsc.png" alt="Query Client Errorsc.png" width="237" hieght="39" />|
+|Query Client Errors|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Query%20Client%20Errorsc.png" alt="Query Client Errorsc.png" width="237" height="39" />|
 || | | | |Return Client asynchronous daemon errors.|
-|Request and Wait for Response|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Request%20and%20Wait%20for%20Responsec.png" alt="Request and Wait for Responsec.png" width="292" hieght="95" />|
+|Request and Wait for Response|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Request%20and%20Wait%20for%20Responsec.png" alt="Request and Wait for Responsec.png" width="292" height="95" />|
 || | | | |Publishes a message and waits for a response with a blocking call.|
-|Return All Subscriptions|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Return%20All%20Subscriptionsc.png" alt="Return All Subscriptionsc.png" width="262" hieght="39" />|
+|Return All Subscriptions|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Return%20All%20Subscriptionsc.png" alt="Return All Subscriptionsc.png" width="262" height="39" />|
 || | | | |Returns all active subscription objects.|
-|Start Client|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Start%20Clientc.png" alt="Start Clientc.png" width="327" hieght="95" />|
+|Start Client|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Start%20Clientc.png" alt="Start Clientc.png" width="327" height="95" />|
 || | | | |Starts the Client asynchronous daemon. The daemon must be started to use other NATS Client.lvclass methods.|
-|Stop Client|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Stop%20Clientc.png" alt="Stop Clientc.png" width="237" hieght="39" />|
+|Stop Client|public|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Stop%20Clientc.png" alt="Stop Clientc.png" width="237" height="39" />|
 || | | | |Stops the Client asynchronous daemon.|
-|get async stop notifier|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/get%20async%20stop%20notifierc.png" alt="get async stop notifierc.png" width="301" hieght="47" />|
-|set async stop notifier|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/set%20async%20stop%20notifierc.png" alt="set async stop notifierc.png" width="312" hieght="47" />|
-|Get Connection DVR|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Get%20Connection%20DVRc.png" alt="Get Connection DVRc.png" width="299" hieght="47" />|
-|Set Connection DVR|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Set%20Connection%20DVRc.png" alt="Set Connection DVRc.png" width="307" hieght="47" />|
-|Get error queue|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Get%20error%20queuec.png" alt="Get error queuec.png" width="301" hieght="47" />|
-|Set error queue|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Set%20error%20queuec.png" alt="Set error queuec.png" width="301" hieght="47" />|
-|Get subscription map|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Get%20subscription%20mapc.png" alt="Get subscription mapc.png" width="308" hieght="47" />|
-|Set subscription map|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Set%20subscription%20mapc.png" alt="Set subscription mapc.png" width="304" hieght="47" />|
-|get subscriptions queue|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/get%20subscriptions%20queuec.png" alt="get subscriptions queuec.png" width="310" hieght="47" />|
-|set subscriptions queue|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/set%20subscriptions%20queuec.png" alt="set subscriptions queuec.png" width="320" hieght="47" />|
-|Reconnect Parameters|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Reconnect%20Parametersc.png" alt="Reconnect Parametersc.png" width="32" hieght="32" />|
-|subscription actions|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/subscription%20actionsc.png" alt="subscription actionsc.png" width="32" hieght="32" />|
-|Subscription Map|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Subscription%20Mapc.png" alt="Subscription Mapc.png" width="32" hieght="32" />|
-|subscription queue|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/subscription%20queuec.png" alt="subscription queuec.png" width="32" hieght="32" />|
+|get async stop notifier|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/get%20async%20stop%20notifierc.png" alt="get async stop notifierc.png" width="301" height="47" />|
+|set async stop notifier|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/set%20async%20stop%20notifierc.png" alt="set async stop notifierc.png" width="312" height="47" />|
+|Get Connection DVR|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Get%20Connection%20DVRc.png" alt="Get Connection DVRc.png" width="299" height="47" />|
+|Set Connection DVR|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Set%20Connection%20DVRc.png" alt="Set Connection DVRc.png" width="307" height="47" />|
+|Get error queue|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Get%20error%20queuec.png" alt="Get error queuec.png" width="301" height="47" />|
+|Set error queue|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Set%20error%20queuec.png" alt="Set error queuec.png" width="301" height="47" />|
+|Get subscription map|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Get%20subscription%20mapc.png" alt="Get subscription mapc.png" width="308" height="47" />|
+|Set subscription map|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Set%20subscription%20mapc.png" alt="Set subscription mapc.png" width="304" height="47" />|
+|get subscriptions queue|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/get%20subscriptions%20queuec.png" alt="get subscriptions queuec.png" width="310" height="47" />|
+|set subscriptions queue|private|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/set%20subscriptions%20queuec.png" alt="set subscriptions queuec.png" width="320" height="47" />|
+|Reconnect Parameters|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Reconnect%20Parametersc.png" alt="Reconnect Parametersc.png" width="32" height="32" />|
+|subscription actions|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/subscription%20actionsc.png" alt="subscription actionsc.png" width="32" height="32" />|
+|Subscription Map|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/Subscription%20Mapc.png" alt="Subscription Mapc.png" width="32" height="32" />|
+|subscription queue|community|FALSE|FALSE|FALSE|<img src="Images/NATS-Client.lvlib--NATS-Client.lvclass-Class-Documentation/subscription%20queuec.png" alt="subscription queuec.png" width="32" height="32" />|

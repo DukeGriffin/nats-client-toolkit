@@ -7,7 +7,7 @@ Empty
 
 # Location
 
-C:\Nats LabVIEW\src\NATS Subscription\NATS Subscription.lvlib
+..\src\NATS Subscription\NATS Subscription.lvlib
 
 # Libraries
 

@@ -6,7 +6,7 @@ Empty
 
 # Location
 
-C:\Nats LabVIEW\src\NATS Client\NATS Client.lvlib
+..\src\NATS Client\NATS Client.lvlib
 
 # Libraries
 

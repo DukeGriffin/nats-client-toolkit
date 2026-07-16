@@ -12,18 +12,20 @@ To learn more about NATS see:
 
 ## Getting Started
 
+**[Documentation / Wiki](https://github.com/andycorb/nats-client-toolkit/wiki)**
+
 ### Installation
 
-Install source code from VI Package Manager. See [NATS.io](https://github.com/nats-io/nats-server/releases/latest) for server installs.
+Install package from VI Package Manager.
 
-#### Windows
+#### Windows NATS Server Install
 
-On Windows, use the scripts in `src\NATS Fixturing\` instead of installing manually. These scripts are wrapped with VIs for ease of use.
-
-##### VI
+On Windows, use the scripts in `src\NATS Insfrastructure\` instead of installing manually. These scripts are wrapped with VIs for ease of use:
 
 - Run `NATS Infrastructure.lvlib:NATS Server Install.vi` to install (requires internet)
 - Run `NATS Infrastructure.lvlib:NATS Server Remvoe.vi` to remove
+
+See [NATS.io](https://github.com/nats-io/nats-server/releases/latest) for manual server installs.
 
 ##### Command Line
 
@@ -40,15 +42,15 @@ On Windows, use the scripts in `src\NATS Fixturing\` instead of installing manua
 
 Both accept an `-InstallDir` param (defaults to `C:\nats`) if you need a custom location.
 
-#### Mac
+#### Mac NATS Server Install
 
 ```sh
 brew install nats-server
 ```
 
-#### Linux
+#### Linux NATS Server Install
 
-NATS provides a docker image providing an easy way to get NATS onto NI Linux Real-Time targets.
+NATS provides a docker image providing an easy way to get NATS onto NI Linux Real-Time targets. See [NATS.io](https://github.com/nats-io/nats-server/releases/latest) for a build matching your machine's architecture.
 
 - [NI Linux RT docker installation](https://nilrt-docs.ni.com/docker/docker.html)
 - [NATS docker image](https://hub.docker.com/_/nats0)
@@ -57,7 +59,7 @@ NATS provides a docker image providing an easy way to get NATS onto NI Linux Rea
 
 After VI package installation navigate to NI Example Finder.
 
-![alt text](docs\examples.png)
+![alt text](docs/Images/examples.png)
 
 ## Contributing
 

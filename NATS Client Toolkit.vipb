@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-07-05 16:45:16" Modified_Date="2026-07-14 23:56:13" Creator="DMC" Comments="" ID="f4125e8e3400022cdbb0d4fcea03a479">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-07-05 16:45:16" Modified_Date="2026-07-15 22:10:45" Creator="DMC" Comments="" ID="42bab27fd8d0e2a443b3a62f65773a31">
   <Library_General_Settings>
     <Package_File_Name>NATS_Client_Toolkit</Package_File_Name>
-    <Library_Version>0.0.0.7</Library_Version>
+    <Library_Version>0.1.0.2</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>src</Library_Source_Folder>
     <Library_Output_Folder>bld</Library_Output_Folder>
@@ -435,7 +435,7 @@ NATS Subscription.lvclass - queue based subscriptions</Release_Notes>
         <Path>src\NATS Infrastructure\NATS Server Remove Windows.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6E16BCE35958E6B4B3732238C46D982E</GUID>
+      <GUID>EF910A2A2CE8A781726D00C216877CB1</GUID>
     </Functions_Palette_Data>
     <Controls_Palette_Data>
       <Parent_Palette_Index>-1</Parent_Palette_Index>
@@ -470,7 +470,7 @@ NATS Subscription.lvclass - queue based subscriptions</Release_Notes>
         <Path>src\NATS Client</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6886CA8D6CD36051FC55BDF941F09D45</GUID>
+      <GUID>B884A233257D67B6EE81AC1232DAEF0D</GUID>
     </Controls_Palette_Data>
     <Controls_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -547,7 +547,7 @@ NATS Subscription.lvclass - queue based subscriptions</Release_Notes>
         <Path>src\NATS Client\subscription queue.ctl</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>2FAAAC7752C9C9258C53AF7E4A5257FE</GUID>
+      <GUID>3970000C4B41B8D59E12D2BF48FF57EB</GUID>
     </Controls_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

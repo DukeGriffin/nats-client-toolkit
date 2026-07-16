@@ -12,46 +12,7 @@ To learn more about NATS see:
 
 ## Getting Started
 
-### Installation
-
-Install source code from VI Package Manager. See [NATS.io](https://github.com/nats-io/nats-server/releases/latest) for server installs.
-
-#### Windows
-
-On Windows, use the scripts in `src\NATS Insfrastructure\` instead of installing manually. These scripts are wrapped with VIs for ease of use.
-
-##### VI
-
-- Run `NATS Infrastructure.lvlib:NATS Server Install.vi` to install (requires internet)
-- Run `NATS Infrastructure.lvlib:NATS Server Remvoe.vi` to remove
-
-##### Command Line
-
-```powershell
-# Installs the latest nats-server release; prompts for amd64/arm64/386
-.\examples\install_nats_windows.ps1
-
-# Install to a custom directory instead of the C:\nats default
-.\examples\install_nats_windows.ps1 -Arch amd64 -InstallDir "C:\somewhere-else"
-
-# Stops any running nats-server process and removes the install + PATH entry
-.\examples\remove_nats_windows.ps1
-```
-
-Both accept an `-InstallDir` param (defaults to `C:\nats`) if you need a custom location.
-
-#### Mac
-
-```sh
-brew install nats-server
-```
-
-#### Linux
-
-NATS provides a docker image providing an easy way to get NATS onto NI Linux Real-Time targets.
-
-- [NI Linux RT docker installation](https://nilrt-docs.ni.com/docker/docker.html)
-- [NATS docker image](https://hub.docker.com/_/nats0)
+**[Documentation / Wiki](https://github.com/andycorb/nats-client-toolkit/wiki)**
 
 ### Examples
 

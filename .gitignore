@@ -21,3 +21,12 @@
 # Test artifcats
 *.html
 *.xml
+
+# Claude Code — excluded entirely (not all contributors use it), anywhere in the tree
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json
+
+# Obsidian vault config (per-user UI state, workspace, plugins — anywhere in the tree)
+.obsidian/

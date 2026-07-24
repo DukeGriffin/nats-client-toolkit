@@ -1,5 +1,8 @@
 # remove_nats_windows.ps1
-# Removes NATS server binary and cleans up PATH entries
+# Full NATS uninstall: stops nats-server, removes the ENTIRE install directory
+# (server + CLI + anything else in it) and cleans up the PATH entry.
+# This is intentionally a complete wipe -- the installers are per-binary, but removal
+# clears the whole directory.
 
 param(
     [string]$InstallDir = "C:\nats"

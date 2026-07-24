@@ -111,6 +111,15 @@ Set on the outgoing `HPUB`. Exact spelling matters — the server matches these 
 - If a message with a `Nats-Msg-Id` seen within the window is republished, the server does **not** store it again and returns a PubAck with `duplicate:true` (the `seq` reflects that no new storage occurred). Callers must treat `duplicate:true` as a *successful, idempotent* outcome, not an error.
 - This is the mechanism that makes the ADR-22 publish-retry loop safe: a retried publish that actually succeeded the first time comes back `duplicate:true` rather than double-storing.
 
+## High-rate data: frame as blocks, not per-sample #decision
+NATS never splits or merges payloads — **one `PUB` = one stored message = one delivered message**, and the payload is opaque bytes. So the *granularity* subscribers read is fixed at publish time; JetStream's pull `batch=N` fetches N **messages**, not "N data points" (see [[05 JetStream Consuming]]).
+
+For high-rate acquisition (e.g. a DAQ at 10 kHz × 8 channels) do **not** publish one sample per message — that is 10,000 msg/s and a punishing per-message parse load on the LabVIEW read loop. Instead **publish a block per time window**: e.g. every 10 ms send one message carrying 100 samples × 8 channels. Same data, but ~100 msg/s of larger payloads, and a subscriber pulling `batch=10` gets 10 blocks = 8,000 points in 10 parses. Message framing is the single biggest throughput lever.
+
+- **Encoding:** payload is opaque → use a compact **binary** encoding for a block (flattened array / typed record), not JSON — smaller and far cheaper to (de)serialize at rate. A 100×8 `float64` block is ~6.4 KB, well under `max_payload` (1 MB default; see [[Core NATS Protocol]]).
+- **Ordering/identity:** JetStream stamps each message with a stream sequence and preserves order, so blocks stay in acquisition order and can be resumed from a known sequence.
+- **Benchmark early:** the single-connection read loop's throughput at your real message rate/size is the thing to verify before committing the concurrency design — this is the `NATS READ.vi` semantics spike in [[Risks and Open Questions]]. Keep the read loop lean (read → route → enqueue) and fan processing out to worker loops (see the connection model in [[Library and Project Structure]]).
+
 ## Async publishing
 
 The goal: keep many publishes **in flight** without blocking on each PubAck, correlating each reply to its originating publish. This is fundamentally the **async variant of Request/Reply** — it cannot be built until that exists. **Depends on** the async request variant in [[01 Request-Reply Helper]], and it is gated by the async-delivery-model decision tracked in [[Risks and Open Questions]] (the same reactor/notifier choice also drives async consumer delivery in [[05 JetStream Consuming]]).

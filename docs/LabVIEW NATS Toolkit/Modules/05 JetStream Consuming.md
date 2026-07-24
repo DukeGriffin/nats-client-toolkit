@@ -75,7 +75,9 @@ A pull consumer delivers nothing until the client asks. The client publishes a *
 $JS.API.CONSUMER.MSG.NEXT.<stream>.<consumer>
 ```
 
-with a **reply inbox** as the NATS reply subject. **The JSON request body below is the PUB payload** — you `PUB $JS.API.CONSUMER.MSG.NEXT.<stream>.<consumer> <inbox> <len>` and the `{"batch":…}` JSON is the message body; the `<inbox>` reply subject is where replies land. The server delivers up to `batch` messages to that inbox, then (optionally) a status message. (ADR-13; JetStream Wire API Reference.) This is a normal Core-NATS publish with reply, so it reuses [[01 Request-Reply Helper]] except that **one request yields many replies** — the helper must not close the inbox after the first message.
+with a **reply inbox** as the NATS reply subject. **The JSON request body below is the PUB payload** — you `PUB $JS.API.CONSUMER.MSG.NEXT.<stream>.<consumer> <inbox> <len>` and the `{"batch":…}` JSON is the message body; the `<inbox>` reply subject is where replies land. The server delivers up to `batch` messages to that inbox, then (optionally) a status message. (ADR-13; JetStream Wire API Reference.)
+
+> **Pull-fetch is composed, not a base command.** `batch=N` does **not** mean "read N messages in one call" — the server sends `N` *separate* `MSG` frames to the inbox, delivered one at a time by the read loop just like any subscription. Pull-fetch is built from the **Collect** capability of [[01 Request-Reply Helper]] (one request → many replies): publish the NEXT request, then gather inbox messages until `batch` data messages are received, a `404`/`408` status frame arrives, or the timeout fires. `NATS Core.lvlib`'s single-message `READ` is the only wire read op — you add no base commands for pull-batch, only this higher-level fetch VI.
 
 ### Pull-next request body (JSON)
 
@@ -235,19 +237,23 @@ Client libraries expose an *ordered consumer* / `OrderedConsumer` type; **it is 
 
 So wherever these notes say "ordered consumer," read it as *"the CONSUMER.CREATE config above + a SUB + sequence-gap watch,"* all expressed in `PUB`/`SUB`/`MSG` frames — no library type involved. For a first cut, a plainer ephemeral consumer (even a pull consumer draining to completion) is a valid simpler substitute; the ordered-consumer machinery is the optimization for long-lived watches.
 
-## LabVIEW async delivery model — needs a shared pattern
+## Async delivery model — pluggable `IDelivery` strategy #decision
 
-Push delivery, pull idle-heartbeat handling, KV `watch`, and Object Store all share the same shape: **an async stream of server-initiated messages** arriving on a subscription, decoupled from the caller's request. LabVIEW has no callbacks/async-iterators, so we need one house pattern reused by this module, [[06 Key-Value Store]] and [[07 Object Store]].
+Push delivery, pull idle-heartbeat handling, KV `watch`, Object Store watch, and async publish acks all share one shape: **an async stream of server-initiated messages** arriving on a subscription, decoupled from the caller's request. Rather than hard-pick one hand-off, the router delivers via a **pluggable delivery strategy** — an `IDelivery` interface (LV 2020+) with one dynamic method `Deliver(message)` — so the developer chooses per subscription. It lives in the connection foundation lib; full rationale in [[Library and Project Structure]].
 
-- #question **Which async delivery primitive?** Options and trade-offs (DECISION deferred to the user — see [[Risks and Open Questions]]):
+| Strategy | How | Use for |
+|---|---|---|
+| **Queue** (default, RT-safe) | router enqueues; a worker loop dequeues at its own pace | general consuming — lossless, bounded, backpressure maps to `max_ack_pending` |
+| **Notifier** | router posts only the latest message | "current value" reads (e.g. KV latest); lossy by design |
+| **User Event** | router fires a user event | UI / event-loop integration; unbounded queue (memory risk), weaker backpressure |
+| **Actor message** | router wraps + sends an AF message | Actor Framework apps ([[10 Object Messaging]]); heaviest (allocation + actor dispatch) |
 
-| Option | How | Pros | Cons |
-|--------|-----|------|------|
-| **A. Subscriber loop → Queue refnum** | One loop owns the SUB and enqueues parsed messages; a consumer loop dequeues, processes, and acks. | Natural producer/consumer; lossless buffering; backpressure maps to `max_ack_pending`; easy to bound. | Two loops + lifecycle/teardown to manage; queue refnum plumbing through the API. |
-| **B. Notifier** | Subscriber posts the latest message to a Notifier the caller waits on. | Simplest; good for "latest value" (e.g. KV latest). | Lossy — misses intervening messages; wrong for durable/at-least-once consuming. |
-| **C. User Events** | Subscriber fires a User Event; caller handles it in an Event Structure. | Integrates with UI event loop; multiple registrants; idiomatic for GUIs. | Event queue is unbounded (memory risk under load); harder to apply consumer-side backpressure; couples toolkit to Event Structure usage. |
+- **Queue is the default** and the only RT-safe choice (preallocated, bounded, no per-message heap allocation — allocations cause jitter on cRIO).
+- The strategy's **dynamic-dispatch cost is negligible** (~1% of the per-message budget at 10 kHz); the per-message parse + the transport op dominate, not the vtable. The genuinely heavy strategy is **Actor message** (object allocation + actor queue) — batch for high-rate.
+- **Bound every Queue** with an explicit overflow policy (drop-oldest / error), mirroring native clients' per-subscription "slow consumer" pending limit — a slow worker must not grow memory or stall the router.
+- Request-reply's single-shot reply is the degenerate (N=1) case of the same hand-off.
 
-Leaning (not a decision): **A (Queue + a control Notifier for shutdown)** as the general-purpose consuming primitive, with B reserved for KV latest-value reads. Confirm before building KV watch, since both reuse it. Cross-link [[Risks and Open Questions]].
+This supersedes the earlier "pick Queue vs Notifier vs Event" open question: **support all as strategies, ship Queue as the default.** Decide the concrete strategy set before building KV watch / Object watch.
 
 ## Sources
 - [Develop JetStream — Model deep dive](https://docs.nats.io/using-nats/developer/develop_jetstream/model_deep_dive)

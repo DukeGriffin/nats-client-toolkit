@@ -14,6 +14,7 @@ New to NATS? **Read [[NATS in 5 Minutes]] first**, then skim the [[Glossary]].
 - [[Glossary]] — one-line definitions of every NATS term used here
 - [[Foundation - nats.lv]] — what the base library already provides vs. what this toolkit must build
 - [[Layering Overview]] — how the pieces stack on top of nats.lv
+- [[Library and Project Structure]] — how the LabVIEW libraries are organized (structure decision)
 - [[Cookbook]] — worked, end-to-end examples of each operation
 - [[Build Order]] — suggested sequencing across modules
 - [[Risks and Open Questions]] — decisions to make & spikes to run before/while building
@@ -31,6 +32,7 @@ New to NATS? **Read [[NATS in 5 Minutes]] first**, then skim the [[Glossary]].
 | 7 | [[07 Object Store]] | planned |
 | 8 | [[08 Services Framework]] | stretch |
 | 9 | [[09 Monitoring and Admin]] | stretch |
+| 10 | [[10 Object Messaging]] | idea |
 
 ## Reference
 - [[NATS Docs Map]] — index of the official docs + ADRs, mapped to modules

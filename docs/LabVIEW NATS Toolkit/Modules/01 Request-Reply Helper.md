@@ -15,6 +15,7 @@ Not glamorous, but everything downstream depends on it.
   4. Wait for a response with a caller-supplied timeout
   5. Unsubscribe / clean up
 - Consider an async variant (fire request, return a refnum/notifier, don't block) since [[04 JetStream Publishing]] needs it for async ack correlation.
+- Provide a **Collect variant (one request → many replies):** publish a request, then gather replies on the inbox until a target count, a terminating status frame, or a timeout. This is the building block for JetStream **pull-fetch** ([[05 JetStream Consuming]]) and for scatter/gather discovery; single request-reply is the N=1 case. See the Collect section below.
 
 ## Depends on
 - [[Foundation - nats.lv]] (PUB/SUB primitives) — nothing else.
@@ -61,9 +62,17 @@ Note the reply `MSG` carries **no** reply-to token (nobody is expected to answer
 ### No-responders fast-fail (503)
 If the toolkit negotiated `no_responders:true` **and** `headers:true` in CONNECT, and the server advertises `headers:true` in INFO, a request published to a subject with **zero subscribers** comes back immediately as an empty `HMSG` on the inbox with header version line `NATS/1.0 503`. Treat this as a distinct "no responders available" outcome and fail fast rather than waiting out the full timeout. If `no_responders` was not negotiated, the only signal is the timeout expiring. See status-header table in [[Core NATS Protocol]].
 
-### Single-response vs multi-response (scatter/gather)
-- **Single response:** return as soon as the first `MSG`/`HMSG` arrives; `UNSUB` immediately. This is what [[03 JetStream Management API]] and [[04 JetStream Publishing]] ack correlation need — one JSON reply per request.
-- **Multi-response (scatter/gather):** the same inbox can receive many replies (e.g. "who's out there" discovery, or first-wins load-balanced responders where extras are discarded). Here **the timeout — not a message count — defines completion**: keep collecting `MSG`s on the inbox until the timeout elapses (or until an optional "at least N responses" target is met), then `UNSUB`. The async variant noted in Scope is the natural home for this: hand the caller a refnum/notifier and let them drain replies until they stop.
+### Single-response, and the Collect variant (one request → many replies)
+- **Single response (N=1):** return as soon as the first `MSG`/`HMSG` arrives; `UNSUB` immediately. This is what [[03 JetStream Management API]] and [[04 JetStream Publishing]] ack correlation need — one JSON reply per request.
+- **Collect (one request → many replies):** the same inbox can receive many replies. A single `Collect` VI generalises the pattern — publish the request, then gather messages off the inbox until **whichever comes first**:
+  1. a target **count** `N` is reached,
+  2. a **terminating status frame** arrives (e.g. JetStream's `404 No Messages` / `408 Request Timeout`), or
+  3. the **timeout** elapses —
+
+  then `UNSUB`. Completion is *not* purely a message count; any of the three ends it.
+  - **This is the primitive behind JetStream pull-fetch** ([[05 JetStream Consuming]]): a pull `batch=N` request is literally "collect up to `N` replies — the server sends `N` separate `MSG` frames — stopping early on a `404`/`408` status." Pull-fetch is *composed* from Collect + the NEXT-request JSON; it is **not** a new base command. There is no wire-level "read many" op — [[Foundation - nats.lv|NATS Core.lvlib]]'s single-message `READ` is the only read primitive, and "batch" is just how many replies Collect gathers off the read loop.
+  - It also covers **scatter/gather discovery** ("who's out there"), where completion is count- or timeout-based.
+- Single request-reply is simply the **N=1** case of Collect. The async variant (Scope) is the natural home for both: hand the caller a refnum/notifier and let them drain replies until a terminating condition.
 
 ### Notes for the async variant
 - Correlation: with a shared-inbox design (`SUB _INBOX.<connUid>.*` once, mint a new trailing token per request), route each incoming `MSG` back to the pending request by its inbox token instead of one SUB/UNSUB per call — fewer round-trips at high request rates.
